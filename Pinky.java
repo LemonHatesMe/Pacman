@@ -47,7 +47,7 @@ public class Pinky extends Ghost {
             dx = Integer.compare(step.x, sx);
             dy = Integer.compare(step.y, sy);
         } else {
-            dx = dy = 0;
+            chooseAnyLegalDirection(); //(Lailani) edit, prevents pinky from getting stuck
         }
     }
 
