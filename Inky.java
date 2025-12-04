@@ -51,6 +51,7 @@ public class Inky extends Ghost {
         int ty = projY + vecY;
 
         // Clamp inside maze
+        int N = maze.getNBlocks(); //prevent from getting stuck (Lailani)
         tx = Math.max(0, Math.min(N - 1, tx));
         ty = Math.max(0, Math.min(N - 1, ty));
 
