@@ -21,8 +21,21 @@ public class Pinky extends Ghost {
         int pdx = pacman.getDx();
         int pdy = pacman.getDy();
 
-        int tx = px + pdx * 2;
-        int ty = py + pdy * 2;
+        //Edit(Lailani): predict four blocks ahead (Within the Papers algorithm)
+        int tx = px, ty = py;
+
+        for(int i = 0; i < 4, i++){
+            int nx = tx + pdx;
+            int ny = ty + pdy;
+
+            if(!maze.isWall(nx, ny)){
+                tx = nx;
+                ty = ny;
+            }
+            else{
+                break;
+            }
+        }
 
         int N = maze.getNBlocks();
         tx = Math.max(0, Math.min(N - 1, tx));
