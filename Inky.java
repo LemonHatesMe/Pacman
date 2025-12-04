@@ -35,6 +35,12 @@ public class Inky extends Ghost {
         projX = Math.max(0, Math.min(N - 1, projX));
         projY = Math.max(0, Math.min(N - 1, projY));
 
+        //Calculates if there is a wall, if there is it will fall back into Blinky's algorithm (Lailani)
+        if (maze.isWall(tx, ty)){
+            tx = px;
+            ty = py;
+        }
+        
         // --------------------------------------------------------
         // 2. Compute vector from Blinky → projection point
         // --------------------------------------------------------
