@@ -24,7 +24,7 @@ public class Pinky extends Ghost {
         //Edit(Lailani): predict four blocks ahead (Within the Papers algorithm)
         int tx = px, ty = py;
 
-        for(int i = 0; i < 4, i++){
+        for(int i = 0; i < 4; i++){
             int nx = tx + pdx;
             int ny = ty + pdy;
 
