@@ -4,6 +4,10 @@ import java.awt.*;
 
 public class Clyde extends Ghost {
 
+    //corner left where Clyde usually runs to (Lailani)
+    private final int conerX = 1;
+    private final int conerY = 13;
+
     public Clyde(Maze maze, PacManPlayer pacman) {
         super(maze, pacman, 7, 9, new Color(255,165,0));
     }
@@ -20,10 +24,10 @@ public class Clyde extends Ghost {
 
         int tx, ty;
 
-        if (dist <= 4) {
+        if (dist <= 8) { //changed the threshold(Lailani)
             // run away
-            tx = sx + (sx - px);
-            ty = sy + (sy - py);
+            tx = cornerX;
+            ty = cornerY;
         } else {
             // chase
             tx = px;
@@ -36,7 +40,7 @@ public class Clyde extends Ghost {
             dx = Integer.compare(step.x, sx);
             dy = Integer.compare(step.y, sy);
         } else {
-            dx = dy = 0;
+            chooseAnyLegalDirection();
         }
     }
 }
