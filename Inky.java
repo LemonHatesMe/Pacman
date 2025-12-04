@@ -11,10 +11,9 @@ public class Inky extends Ghost {
         this.blinky = blinky;
     }
 
+    //fixed a bit of the logic here(Lailani)
     @Override
     public void chaseMove() {
-
-        if (!isCentered()) return; // only pick direction at intersections
 
         int sx = getGridX();
         int sy = getGridY();
@@ -28,8 +27,8 @@ public class Inky extends Ghost {
         // 1. REAL PAC-MAN RULE:
         //     Look 2 tiles ahead of Pac-Man in his movement direction
         // --------------------------------------------------------
-        int projX = px + pdx * 2;
-        int projY = py + pdy * 2;
+        int projX = px + pdx * 4;
+        int projY = py + pdy * 4;
 
         // Clamp inside maze
         int N = maze.getNBlocks();
