@@ -5,7 +5,7 @@ import java.awt.*;
 public class Blinky extends Ghost {
 
     public Blinky(Maze maze, PacManPlayer pacman) {
-        super(maze, pacman, 7, 7, Color.RED);
+        super(maze, pacman, 7, 5, Color.RED); 
     }
 
     @Override
@@ -22,7 +22,7 @@ public class Blinky extends Ghost {
             dx = Integer.compare(step.x, sx);
             dy = Integer.compare(step.y, sy);
         } else {
-            dx = dy = 0;
+            chooseAnyLegalDirection(); //prevents Blinky from getting stuck
         }
     }
 }
