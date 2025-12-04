@@ -79,8 +79,15 @@ public class PacManPlayer {
     }
 
     /** Movement direction for ghost prediction */
-    public int getDx() { return dx; }
-    public int getDy() { return dy; }
+    //Fixed the logic (Lailani)
+    public int getDx() {
+        if (dx == 0) return 0;
+        return dx / Math.abs(dx);
+    }
+    public int getDy() {
+        if (dy == 0) return 0;
+        return dy / Math.abs(dy);
+    }
 
     /** Reset position (used on restart) */
     public void setPosition(int tileX, int tileY) {
