@@ -16,10 +16,10 @@ public abstract class Ghost {
     public boolean eaten = false;
     protected int scaredTimer = 0;
 
-    // speeds
-    protected int speedNormal = 8;
-    protected int speedScared = 4;
-    protected int speedEyes   = 10;
+    // speeds  (I updated the speeds of the ghosts)
+    protected int speedNormal = 10;
+    protected int speedScared = 5;
+    protected int speedEyes   = 12;
 
     protected final int blockSize;
 
