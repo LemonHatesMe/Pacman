@@ -19,7 +19,7 @@ public class Board extends JPanel implements ActionListener {
 
     // frightened mode
     private int frightenedTimer = 0;
-    private final int FRIGHTENED_DURATION = 150; // shorter = more classic
+    private final int FRIGHTENED_DURATION = 60; // I changed it so the ghosts stay a shorter time in frightened mode and make the game a little more difficult
 
     // ghost pacing
     private int ghostStepCounter = 0;
