@@ -39,7 +39,7 @@ public class Board extends JPanel implements ActionListener {
         setBackground(Color.BLACK);
         setFocusable(true);
 
-        pacman = new PacManPlayer(7, 13, maze);
+        pacman = new PacManPlayer(10, 15, maze);//updated the pacman starting position bc of the maze change in size
 
         ghosts = new ArrayList<>();
         Blinky blinky = new Blinky (maze, pacman);
@@ -203,7 +203,7 @@ public class Board extends JPanel implements ActionListener {
     private void restart() {
         maze.resetDots();
         score = 0;
-        pacman.setPosition(7, 13);
+        pacman.setPosition(10, 15);
 
         ghosts.clear();
 
